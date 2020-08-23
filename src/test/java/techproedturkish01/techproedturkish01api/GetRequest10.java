@@ -11,7 +11,7 @@ import java.util.List;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class GetRequest10 extends TestBase {
+public class GetRequest10 extends TestBase01 {
 	
 	/*
 	 When I send GET Request to URL

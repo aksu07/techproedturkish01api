@@ -18,6 +18,10 @@ public class TestBase {
 	protected RequestSpecification spec01;
 	protected RequestSpecification spec02;
 	protected RequestSpecification spec03;
+	protected Map<String, String> bookingDatesMap;
+	protected Map<String, Object> requestBodyMap;
+	protected JSONObject jsonBookingDatesBody;
+	protected JSONObject jsonRequestBody;
 	
 	@Before
 	public void setUp01() {		
@@ -42,15 +46,15 @@ public class TestBase {
 	
 	protected Response createRequestBodyByJsonObjectClass() {
 		
-		JSONObject jsonBookingDatesBody = new JSONObject();
+		jsonBookingDatesBody = new JSONObject();
 		jsonBookingDatesBody.put("checkin", "2020-05-02");
 		jsonBookingDatesBody.put("checkout", "2020-05-05");
 		
-		JSONObject jsonRequestBody = new JSONObject();
-		jsonRequestBody.put("firstname", "Suleyman");
-		jsonRequestBody.put("lastname", "Alptekin");
-		jsonRequestBody.put("totalprice", 123);
-		jsonRequestBody.put("depositpaid", true);
+		jsonRequestBody = new JSONObject();
+		jsonRequestBody.put("firstname", "Kemal");
+		jsonRequestBody.put("lastname", "Can");
+		jsonRequestBody.put("totalprice", 888);
+		jsonRequestBody.put("depositpaid", false);
 		jsonRequestBody.put("bookingdates", jsonBookingDatesBody);//bookingdates'in value'su bir Json
 		jsonRequestBody.put("additionalneeds", "Wifi");
 		
@@ -68,13 +72,13 @@ public class TestBase {
 	
 	protected Response createRequestBodyByMap() {
 		
-		Map<String, String> bookingDatesMap = new HashMap<>();
+		bookingDatesMap = new HashMap<>();
 		bookingDatesMap.put("checkin", "2020-05-02");
 		bookingDatesMap.put("checkout", "2020-05-05");
 		
-		Map<String, Object> requestBodyMap = new HashMap<>();
-		requestBodyMap.put("firstname", "Suleyman");
-		requestBodyMap.put("lastname", "Alptekin");
+		requestBodyMap = new HashMap<>();
+		requestBodyMap.put("firstname", "Ahmet");
+		requestBodyMap.put("lastname", "Yildiz");
 		requestBodyMap.put("totalprice", 123);
 		requestBodyMap.put("depositpaid", true);
 		requestBodyMap.put("bookingdates", bookingDatesMap);
