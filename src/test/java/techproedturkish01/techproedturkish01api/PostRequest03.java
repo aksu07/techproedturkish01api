@@ -75,23 +75,7 @@ public class PostRequest03 extends TestBase  {
 		softAssert.assertEquals(json.getString("booking.additionalneeds"), "Wifi");
 		
 		softAssert.assertAll();
-		
-		
-		
-		
+	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

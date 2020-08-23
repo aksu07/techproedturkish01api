@@ -1,15 +1,13 @@
 package techproedturkish01.techproedturkish01api;
 
 import static io.restassured.RestAssured.*;
-
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class PostRequest04 extends TestBase {
+public class PostRequest05 extends TestBase {
 	
 						/*
 								POST Scenario:
@@ -42,7 +40,7 @@ public class PostRequest04 extends TestBase {
 	public void post01() {
 		
 		BookingDates bookingDates = new BookingDates("2020-05-02", "2020-05-05");
-		Booking booking = new Booking("Suleyman", "Alptekin", 123, true, bookingDates, "Wifi");
+		Booking booking = new Booking("Ayse", "Yildiz", 333, true, bookingDates, "Wifi");
 		
 		Response response = given().
 				                contentType(ContentType.JSON).
@@ -65,25 +63,25 @@ public class PostRequest04 extends TestBase {
 		SoftAssert softAssert = new SoftAssert();
 		
 		//firstname assertion
-		softAssert.assertEquals(json.getString("booking.firstname"), "Suleyman");
+		softAssert.assertEquals(json.getString("booking.firstname"), booking.getFirstname());
 		
 		//lastname assertion
-		softAssert.assertEquals(json.getString("booking.lastname"), "Alptekin");
+		softAssert.assertEquals(json.getString("booking.lastname"), booking.getLastname());
 		
 		//totalprice assertion
-		softAssert.assertEquals(json.getInt("booking.totalprice"), 123);
+		softAssert.assertEquals(json.getInt("booking.totalprice"), booking.getTotalprice());
 		
 		//depositpaid assertion
-		softAssert.assertEquals(json.getBoolean("booking.depositpaid"), true);
+		softAssert.assertEquals(json.getBoolean("booking.depositpaid"), booking.getDepositpaid());
 		
 		//checkin assertion
-		softAssert.assertEquals(json.getString("booking.bookingdates.checkin"), "2020-05-02");
+		softAssert.assertEquals(json.getString("booking.bookingdates.checkin"), booking.getBookingdates().getCheckin());
 		
 		//checkout assertion
-		softAssert.assertEquals(json.getString("booking.bookingdates.checkout"), "2020-05-05");
+		softAssert.assertEquals(json.getString("booking.bookingdates.checkout"), booking.getBookingdates().getCheckout());
 		
 		//additionalneeds assertion
-		softAssert.assertEquals(json.getString("booking.additionalneeds"), "Wifi");
+		softAssert.assertEquals(json.getString("booking.additionalneeds"), booking.getAdditionalneeds());
 		
 		softAssert.assertAll();
 	}
@@ -119,3 +117,4 @@ public class PostRequest04 extends TestBase {
 	
 
 }
+
