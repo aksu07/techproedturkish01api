@@ -60,7 +60,7 @@ public class GetRequest13 extends TestBase {
         expectedMap.put(2, "Ashton Cox");
         expectedMap.put(3, "Cedric Kelly");
         expectedMap.put(4, "Airi Satou");
-        System.out.println(expectedMap);
+        System.out.println(expectedMap);//{0=Tiger Nixon, 1=Garrett Winters, 2=Ashton Cox, 3=Cedric Kelly, 4=Airi Satou}
         
         for(int i=0; i<expectedMap.size(); i++) {
         	softAssert.assertEquals(actualList.get(i).get("employee_name"), expectedMap.get(i));
