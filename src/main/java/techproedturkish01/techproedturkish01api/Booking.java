@@ -3,7 +3,7 @@ package techproedturkish01.techproedturkish01api;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Booking {
-	
+	// merhaba deneme yapiyorum
 	/*
 	 POJO'da olmasi gerekenler;
 	 http://www.jsonschema2pojo.org/ ==> bu web sitesinden POJO uretebilirsiniz
